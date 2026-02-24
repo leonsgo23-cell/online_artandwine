@@ -154,8 +154,8 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 .gallery-kids-head { max-width: 1160px; margin: 72px auto 28px; display: flex; align-items: center; gap: 16px; }
 .gallery-kids-line { flex: 1; height: 1px; background: var(--border); }
 .gallery-kids-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--p); white-space: nowrap; background: var(--p-bg); border-radius: 100px; padding: 6px 16px; }
-@media (max-width: 960px) { .gallery-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px) { .gallery-grid { grid-template-columns: repeat(2,1fr); gap: 12px; } .gallery-thumb { height: 160px; } }
+@media (max-width: 960px) { .gallery-grid, #gallery-extra { grid-template-columns: repeat(2,1fr) !important; } }
+@media (max-width: 560px) { .gallery-grid, #gallery-extra { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; } .gallery-thumb { height: 160px; } }
 
 /* ── HOW ── */
 .how { background: #fff; padding: 100px 32px; }
@@ -241,16 +241,6 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 .checklist li.green-item::before { background-color: rgba(52,211,153,.15); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2 6l3 3 5-5' stroke='%2334d399' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E"); }
 .pricing-note { text-align: center; font-size: 13px; color: var(--light); margin-top: 20px; }
 
-/* ── KIDS ── */
-.kids { background: #fff; padding: 100px 32px; }
-.kids-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-.kids-img { border-radius: 24px; overflow: hidden; height: 420px; background: linear-gradient(145deg,#fef9c3,#fed7aa,#fce7f3,#ddd6fe); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
-.kids-img-canvas  { width: 160px; height: 120px; border-radius: 8px; background: linear-gradient(135deg,#86efac,#34d399,#059669); box-shadow: 0 8px 24px rgba(0,0,0,.15); }
-.kids-img-canvas2 { width: 120px; height: 90px; border-radius: 8px; background: linear-gradient(135deg,#fca5a5,#f472b6,#a855f7); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
-.kids-copy h2   { margin-bottom: 16px; }
-.kids-copy .lead { margin-bottom: 28px; }
-.check-bubble { background: var(--p-bg); color: var(--p); border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; flex-shrink: 0; margin-top: 2px; }
-.check-row { display: flex; align-items: flex-start; gap: 10px; font-size: 15px; margin-bottom: 11px; }
 
 /* ── TRUST ── */
 .trust { background: var(--cream); padding: 100px 32px; border-top: 1px solid var(--border); }
@@ -337,9 +327,7 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .how-grid { grid-template-columns: 1fr; gap: 40px; }
   .how-grid .how-step::after { display: none; }
   .proof-grid { grid-template-columns: 1fr; }
-  .kit-inner { grid-template-columns: 1fr; gap: 48px; }
   .pkg-grid { grid-template-columns: 1fr; max-width: 480px; }
-  .kids-inner { grid-template-columns: 1fr; gap: 48px; }
   .trust-inner { grid-template-columns: 1fr; gap: 48px; }
   .course-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .course-feats { gap: 32px; }
@@ -359,14 +347,13 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
 /* ── FOR WHOM ── */
 .forwhom { background: #fff; padding: 88px 32px; }
 .forwhom-head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
-.forwhom-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(5,1fr); gap: 16px; }
+.forwhom-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 .fw-card { background: var(--cream); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .2s ease, box-shadow .2s ease; }
 .fw-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(132,115,239,.12); }
 .fw-icon { width: 56px; height: 56px; background: var(--p-bg); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
 .fw-icon svg { width: 24px; height: 24px; stroke: var(--p); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .fw-title { font-size: 17px; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
 .fw-text  { font-size: 14px; color: var(--grey); line-height: 1.65; }
-@media (max-width: 1200px) { .forwhom-grid { grid-template-columns: repeat(3,1fr); } }
 @media (max-width: 960px)  { .forwhom-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px)  { .forwhom-grid { grid-template-columns: 1fr; } }
 
@@ -427,7 +414,7 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       <div style="max-width:520px;">
         <span style="display:block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(168,145,255,.8);margin-bottom:20px;">Твой вечер</span>
         <h2 style="font-size:52px;font-weight:900;line-height:1.06;letter-spacing:-2px;color:#fff;margin-bottom:20px;">Свечи.<br>Музыка.<br>Картина.</h2>
-        <p style="font-size:18px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:32px;max-width:400px;">Никаких правил, никаких ожиданий. Просто ты, бокал вина и холст. Через два часа — картина на стене и воспоминание, которое останется навсегда.</p>
+        <p style="font-size:18px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:32px;max-width:400px;">Никаких правил, никаких ожиданий. Просто ты, свечи, музыка и холст. Через два часа — картина на стене и воспоминание, которое останется навсегда.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
           <a href="#gallery" class="btn btn-light">Выбрать картину</a>
           <a href="#pricing" style="display:inline-block;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;border-radius:100px;padding:14px 32px;border:2px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='transparent'">Смотреть цены</a>
@@ -619,16 +606,104 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       </div>
     </div>
 
-    <div class="gallery-more" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">
-      <div class="gm-num">+43</div>
-      <div class="gm-lbl">Все картины →</div>
+  </div>
+
+  <!-- Скрытые карточки -->
+  <div id="gallery-extra" style="max-width:1160px;margin:20px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;overflow:hidden;max-height:0;transition:max-height .6s ease;">
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3535-3934-4633-b635-303266666534/Site_Main_21.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-easy">Для начинающих</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Весенний сад</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild6634-6535-4737-b362-623532396165/Site_Main_31.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-medium">Средний уровень</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Горный закат</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3964-3163-4563-b237-353334363535/Site_Main_32.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-easy">Для начинающих</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Розовый рассвет</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3031-6337-4435-a537-643466613739/Site_Main_33.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-medium">Средний уровень</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Тихая гавань</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild6230-3232-4466-b362-626336393839/Site_Main_6.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-easy">Для начинающих</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Белые пионы</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3664-6639-4130-b636-633266363966/Site_Main_10.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-medium">Средний уровень</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Ночной маяк</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3532-3965-4134-b537-356430346165/Site_Main_20.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-easy">Для начинающих</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Лавандовые поля</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
+    </div>
+
+    <div class="gallery-card">
+      <div class="gallery-thumb" style="background-image:url('https://static.tildacdn.net/tild3264-6339-4166-b862-626335333331/26.png');background-size:cover;background-position:center;">
+        <span class="gallery-badge gallery-badge-medium">Средний уровень</span>
+      </div>
+      <div class="gallery-info">
+        <div class="gallery-name">Городской дождь</div>
+        <div class="gallery-meta">Холст 30×40 · Акрил · Видео мастер-класс</div>
+        <div class="gallery-bottom"><div class="gallery-price">40 <span>€</span></div><a href="#pricing" class="gallery-btn">Заказать</a></div>
+      </div>
     </div>
 
   </div>
 
-
   <div class="gallery-cta">
-    <a href="#pricing" class="btn btn-fill">Смотреть цены и заказать</a>
+    <button id="gallery-toggle-btn" onclick="(function(btn){var el=document.getElementById('gallery-extra');var grid=document.getElementById('gallery-extra');var open=grid.style.maxHeight&&grid.style.maxHeight!=='0px';if(open){grid.style.maxHeight='0';btn.textContent='Показать ещё картины ↓';}else{grid.style.maxHeight=grid.scrollHeight+'px';btn.textContent='Скрыть ↑';}})(this)" style="background:var(--p);color:#fff;border:none;border-radius:100px;padding:14px 36px;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:all .22s ease;margin-bottom:16px;display:block;margin-left:auto;margin-right:auto;" onmouseover="this.style.background='var(--p-d)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='var(--p)';this.style.transform='none'">Показать ещё картины ↓</button>
+    <a href="#pricing" class="btn btn-outline" style="display:inline-block;">Смотреть цены и заказать</a>
   </div>
 </section>
 
@@ -662,14 +737,14 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   <div class="hero-inner">
     <div class="hero-copy">
       <div class="hero-badge">
-        <span class="hero-badge-dot">Art & Wine</span>
-        Sip &amp; Paint at Home · Студия №1 в Европе
+        <span class="hero-badge-dot">Готовый набор</span>
+        Всё уже внутри — просто открой и рисуй
       </div>
-      <h1>Нарисуйте<br>картину<br><span>своими руками</span><br>за 2 часа</h1>
-      <p class="hero-text">Откройте бутылку вина, включите музыку — и начинайте. Пошаговый видео мастер-класс от художников Art&nbsp;&amp;&nbsp;Wine проведёт вас шаг за шагом. Опыт не нужен. Доставляем наборы по всему миру.</p>
+      <h1>Опыт<br>не нужен.<br><span>Результат</span><br>гарантирован.</h1>
+      <p class="hero-text">Каждый набор собран под конкретную картину: холст, краски, кисти, палитра, фартук и пошаговый видео мастер-класс. Открываешь коробку — и всё готово. Ничего докупать не нужно.</p>
       <div class="hero-cta">
-        <a href="#gallery" class="btn btn-fill">Выбрать картину</a>
-        <a href="#how" class="btn btn-outline">Как это работает</a>
+        <a href="#pricing" class="btn btn-fill">Выбрать набор</a>
+        <a href="#gallery" class="btn btn-outline">Смотреть картины</a>
       </div>
       <div class="hero-proof">
         <div class="hero-avatars">
@@ -766,13 +841,6 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       <div class="fw-title">Date Night</div>
       <p class="fw-text">Вино, свечи, музыка, холст. Романтический вечер дома — с результатом, который останется на стене.</p>
     </div>
-    <div class="fw-card">
-      <div class="fw-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 6v6l4 2"/></svg>
-      </div>
-      <div class="fw-title">Тем, кто устал</div>
-      <p class="fw-text">После напряжённого дня — кисть в руку, музыка в фоне. Рисование снимает стресс лучше, чем Netflix.</p>
-    </div>
   </div>
 </section>
 
@@ -813,34 +881,6 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       <div class="proof-stars"><span></span><span></span><span></span><span></span><span></span></div>
       <p class="proof-quote">«Очень довольна — отличное развлечение! Быстрая доставка, всё аккуратно упаковано. Набор полный, ничего не нужно докупать. Буду заказывать ещё.»</p>
       <div class="proof-author"><div class="proof-avatar" style="background:linear-gradient(135deg,#f472b6,#e11d48);"></div><div><div class="proof-name">Ева А.</div><div class="proof-detail">Латвия</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- KIT -->
-<section class="kit">
-  <div class="kit-inner w">
-    <div class="kit-visual-wrap">
-      <div class="kit-main-img" style="background:none;padding:0;overflow:hidden;">
-        <img src="https://static.tildacdn.net/tild3265-3861-4461-b965-633866323834/25.png" alt="Art & Wine набор" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style='background:linear-gradient(145deg,#ece9ff,#f5e8ff,#e8f0ff);display:flex;flex-direction:column;align-items:center;justify-content:center;'; this.remove();">
-      </div>
-      <div class="kit-float-badge">Всё уже внутри</div>
-    </div>
-    <div class="kit-copy">
-      <span class="overline">Состав набора</span>
-      <h2>Открой коробку — и начинай</h2>
-      <p class="lead">Мы подбираем каждый набор под конкретную картину. Ничего лишнего, ничего не хватает.</p>
-      <div class="kit-list">
-        <div class="kit-list-item"><div class="kl-dot"></div>Холст 30×40 см</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Кисти — 5 штук</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Акриловые краски</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Видео мастер-класс от художника</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Палитра для смешивания</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Фартук</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Карандаш</div>
-        <div class="kit-list-item"><div class="kl-dot"></div>Инструкция</div>
-      </div>
-      <a href="#pricing" class="btn btn-fill">Выбрать набор</a>
     </div>
   </div>
 </section>
@@ -939,7 +979,36 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
     </div>
 
   </div>
-  <p class="pricing-note">Цены без учёта доставки &bull; Оплата картой (Stripe)</p>
+  <!-- Что в наборе — раскрывающийся -->
+  <div style="max-width:680px;margin:40px auto 0;">
+    <button onclick="(function(btn){var box=document.getElementById('kit-contents');var open=box.style.maxHeight&&box.style.maxHeight!=='0px';box.style.maxHeight=open?'0':'400px';btn.querySelector('.kit-toggle-icon').textContent=open?'▾':'▴';})(this)" style="width:100%;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:18px 24px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;font-family:'Manrope',sans-serif;font-size:15px;font-weight:700;color:var(--dark);transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 20px rgba(0,0,0,.07)'" onmouseout="this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="width:38px;height:38px;border-radius:10px;background:var(--p-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/></svg>
+        </div>
+        <span>Что входит в каждый набор?</span>
+      </div>
+      <span class="kit-toggle-icon" style="font-size:18px;color:var(--p);">▾</span>
+    </button>
+    <div id="kit-contents" style="max-height:0;overflow:hidden;transition:max-height .4s ease;">
+      <div style="background:#fff;border:1.5px solid var(--border);border-top:none;border-radius:0 0 16px 16px;padding:0 24px 24px;">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;padding-top:16px;">
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;padding-right:16px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Холст 30×40 см</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Кисти — 5 штук</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;padding-right:16px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Акриловые краски</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Палитра для смешивания</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;padding-right:16px;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Фартук</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;font-weight:600;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Карандаш и инструкция</div>
+          <div style="display:flex;align-items:center;gap:10px;padding:10px 0;font-size:14px;font-weight:600;padding-right:16px;grid-column:1/-1;color:var(--p);font-weight:800;"><div style="width:8px;height:8px;border-radius:50%;background:var(--p);flex-shrink:0;"></div>Видео мастер-класс от художника — под эту картину</div>
+        </div>
+        <div style="margin-top:16px;padding:14px 16px;background:var(--p-bg);border-radius:10px;font-size:13px;color:var(--p);font-weight:700;">
+          🎁 Мы подбираем каждый набор под конкретную картину. Ничего докупать не нужно.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <p class="pricing-note" style="margin-top:28px;">Цены без учёта доставки &bull; Оплата картой (Stripe)</p>
   <div style="max-width:480px;margin:28px auto 0;background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:18px 24px;display:flex;align-items:center;gap:16px;">
     <div style="width:40px;height:40px;border-radius:50%;background:var(--p-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--p)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
