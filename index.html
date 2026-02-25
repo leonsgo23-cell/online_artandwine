@@ -197,6 +197,25 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 .kit-list-item:nth-child(odd) { padding-right: 16px; }
 .kl-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--p); flex-shrink: 0; }
 
+/* ── OCCASIONS ── */
+.occasions { padding: 100px 32px; background: var(--cream); }
+.occasions-head { text-align: center; margin-bottom: 64px; }
+.occ-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.occ-card { border-radius: 28px; padding: 44px 36px 180px; display: flex; flex-direction: column; position: relative; overflow: hidden; min-height: 460px; background-size: cover; background-position: center; }
+.occ-card::before { content:''; position:absolute; inset:0; }
+.occ-date   { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); }
+.occ-girls  { background-image: url('https://static.tildacdn.net/tild3266-3235-4666-a338-316234313161/creative-women-art-e.png'); background-position: center top; }
+.occ-family { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); background-position: center 30%; }
+.occ-date::before   { background: linear-gradient(160deg, rgba(70,8,25,.84) 0%, rgba(110,15,40,.93) 100%); }
+.occ-girls::before  { background: linear-gradient(160deg, rgba(28,14,68,.84) 0%, rgba(90,68,200,.9) 100%); }
+.occ-family::before { background: linear-gradient(160deg, rgba(12,36,50,.84) 0%, rgba(18,80,62,.93) 100%); }
+.occ-card-inner { position: relative; z-index: 1; display: flex; flex-direction: column; }
+.occ-tag { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 20px; }
+.occ-emoji { font-size: 44px; line-height: 1; margin-bottom: 20px; }
+.occ-card h3 { font-size: 28px; font-weight: 900; line-height: 1.15; color: #fff; margin-bottom: 16px; letter-spacing: -.5px; }
+.occ-card p { font-size: 15px; line-height: 1.75; color: rgba(255,255,255,.82); }
+.occ-painting { position: absolute; bottom: 28px; right: 24px; width: 130px; height: 130px; border-radius: 16px; background-size: cover; background-position: center; opacity: .4; transform: rotate(7deg); box-shadow: 0 6px 20px rgba(0,0,0,.4); z-index: 1; }
+
 /* ── PRICING ── */
 .pricing { background: var(--sand); padding: 100px 32px; }
 .pricing-head { text-align: center; margin-bottom: 64px; }
@@ -327,6 +346,7 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .how-grid { grid-template-columns: 1fr; gap: 40px; }
   .how-grid .how-step::after { display: none; }
   .proof-grid { grid-template-columns: 1fr; }
+  .occ-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .pkg-grid { grid-template-columns: 1fr; max-width: 480px; }
   .trust-inner { grid-template-columns: 1fr; gap: 48px; }
   .course-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
@@ -341,6 +361,9 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .hero h1 { font-size: 36px; }
   .hero-cta { flex-direction: column; }
   .kit-list { grid-template-columns: 1fr; }
+  .occ-card { padding: 36px 28px 140px; min-height: 380px; }
+  .occ-card h3 { font-size: 24px; }
+  .occ-painting { width: 100px; height: 100px; }
   .atm-icons { display: none !important; }
 }
 
@@ -885,12 +908,59 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   </div>
 </section>
 
+<!-- OCCASIONS -->
+<section class="occasions" id="occasions">
+  <div class="w">
+    <div class="occasions-head">
+      <span class="overline">Для любого повода</span>
+      <h2>Любой вечер<br>может быть особенным</h2>
+      <p class="lead" style="max-width:540px;margin-left:auto;margin-right:auto;">Набор открывают на свидании, на девичнике, в семейный вечер дома. Один и тот же результат — картина и хорошее настроение.</p>
+    </div>
+    <div class="occ-grid">
+
+      <!-- Свидание -->
+      <div class="occ-card occ-date">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Свидание</div>
+          <div class="occ-emoji">🕯️</div>
+          <h3>Вечер на двоих</h3>
+          <p>Вы вместе рисуете, смеётесь, открываете вино. Никаких экранов — только холст и разговор. Готовая картина остаётся как воспоминание об этом вечере.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3536-3062-4433-b630-323261616165/Site_Main_14.png');"></div>
+      </div>
+
+      <!-- Девичник -->
+      <div class="occ-card occ-girls">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Девичник</div>
+          <div class="occ-emoji">🥂</div>
+          <h3>Вечер с подругами</h3>
+          <p>3–4 подруги с наборами. Музыка, бокал вина, кисти. Каждая рисует свою картину — и забирает её домой как подарок вечера.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3938-3263-4162-b439-646464393563/15.png');"></div>
+      </div>
+
+      <!-- Вечер с семьёй -->
+      <div class="occ-card occ-family">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Вечер с семьёй</div>
+          <div class="occ-emoji">🎨</div>
+          <h3>Вместе дома</h3>
+          <p>Выключаете сериал, открываете набор — и рисуете вместе. Неважно, умеете ли держать кисть. Результат удивит всех, включая вас.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3233-3533-4965-a638-313637636339/4.png');"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- PRICING -->
 <section class="pricing" id="pricing">
   <div class="pricing-head">
     <span class="overline">Выбери пакет</span>
     <h2>Чем больше — тем выгоднее</h2>
-    <p class="lead">Один набор для себя, пакет 3+1 для компании, или максимум — с онлайн-курсом в подарок.</p>
+    <p class="lead">Один набор для первого вечера, пакет для компании — или полный онлайн-курс с материалами для тех, кто хочет научиться рисовать по-настоящему.</p>
   </div>
   <div class="pkg-grid">
 
@@ -949,32 +1019,32 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       </div>
     </div>
 
-    <!-- 6+2 + курс -->
+    <!-- Онлайн-курс с материалами -->
     <div class="pkg pkg-bonus">
-      <div class="pkg-badge pkg-badge-green">+ Курс в подарок</div>
-      <div class="pkg-label">Максимум</div>
-      <div class="pkg-name">Моя галерея</div>
-      <div class="pkg-sub">Купи шесть наборов — два получи бесплатно, плюс полный онлайн-курс рисования в подарок.</div>
+      <div class="pkg-badge pkg-badge-green">Хочу научиться рисовать</div>
+      <div class="pkg-label">Для тех, кто всерьёз</div>
+      <div class="pkg-name">Онлайн-курс</div>
+      <div class="pkg-sub">30 уроков рисования + все материалы с доставкой домой. От новичка до своего стиля.</div>
       <div class="pkg-scenario">
         <span class="pkg-tag">серьёзное хобби</span>
-        <span class="pkg-tag">группа друзей</span>
-        <span class="pkg-tag">максимум выгоды</span>
+        <span class="pkg-tag">с нуля</span>
+        <span class="pkg-tag">всё включено</span>
       </div>
       <div class="pkg-price">
-        <span class="pkg-amount">240</span>
+        <span class="pkg-amount">189</span>
         <span style="font-size:22px;font-weight:700;color:rgba(255,255,255,.4);margin-bottom:4px;">€</span>
-        <span class="pkg-old" style="color:rgba(255,255,255,.3);">459 €</span>
+        <span class="pkg-old" style="color:rgba(255,255,255,.3);">329 €</span>
       </div>
-      <div class="pkg-save">Экономия 219 € + курс рисования бесплатно</div>
+      <div class="pkg-save">8 холстов + краски + кисти + 30 уроков</div>
       <ul class="checklist pkg-features">
-        <li>6 наборов на выбор</li>
-        <li><strong style="color:#fff;">+ 2 набора бесплатно</strong></li>
-        <li class="green-item">Онлайн-курс (30 уроков) в подарок</li>
-        <li>6 месяцев доступа к курсу</li>
-        <li>Приоритетная доставка</li>
+        <li>30 видео уроков в записи</li>
+        <li>8 холстов 30×40 с доставкой</li>
+        <li>Акриловые краски, кисти, палитра</li>
+        <li>6 месяцев доступа 24/7</li>
+        <li>Поддержка преподавателя</li>
       </ul>
       <div class="pkg-cta">
-        <a href="https://wa.me/37127057769?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21+%D0%A5%D0%BE%D1%87%D1%83+%D0%B7%D0%B0%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C+%D0%BF%D0%B0%D0%BA%D0%B5%D1%82+6%2B2+%D1%81+%D0%BA%D1%83%D1%80%D1%81%D0%BE%D0%BC." target="_blank" class="btn btn-fill btn-block">Заказать 6+2</a>
+        <a href="https://artandme.online" target="_blank" class="btn btn-fill btn-block">Купить курс</a>
       </div>
     </div>
 
@@ -1180,49 +1250,9 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
     </div>
   </div>
 
-  <!-- course pricing -->
-  <div class="course-grid">
-    <div class="course-card course-base">
-      <span class="cc-label">Базовый</span>
-      <div class="cc-name">Без материалов</div>
-      <div class="cc-sub">Покупаешь материалы по нашему списку самостоятельно</div>
-      <div class="cc-price">139 €</div>
-      <ul class="checklist white">
-        <li>30 видео мастер-классов в записи</li>
-        <li>6 месяцев доступа, 24/7</li>
-        <li>Поддержка преподавателя</li>
-        <li>Подробный список материалов</li>
-        <li>Учись дома, на даче, в отпуске</li>
-      </ul>
-      <div style="margin-top:28px;">
-        <a href="https://artandme.online" target="_blank" class="btn btn-block" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.15);border-radius:100px;padding:14px;font-size:11px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;">Узнать больше</a>
-      </div>
-    </div>
-    <div class="course-card course-full">
-      <div class="course-badge">Всё включено</div>
-      <span class="cc-label">Полный комплект</span>
-      <div class="cc-name">С материалами</div>
-      <div class="cc-sub">Всё необходимое доставят прямо домой</div>
-      <div class="cc-price">189 €</div>
-      <ul class="checklist gold">
-        <li>30 видео мастер-классов в записи</li>
-        <li>6 месяцев доступа, 24/7</li>
-        <li>8 холстов 30×40 с доставкой</li>
-        <li>8 наборов акриловых красок</li>
-        <li>5 кистей, палитра, карандаши, 10 фартуков</li>
-        <li>Поддержка преподавателя</li>
-      </ul>
-      <div style="margin-top:28px;">
-        <a href="https://artandme.online" target="_blank" class="btn btn-light btn-block">Купить курс</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="course-feats">
-    <div class="cf"><div class="cf-num">30</div><div class="cf-lbl">видео мастер-классов</div></div>
-    <div class="cf"><div class="cf-num">6</div><div class="cf-lbl">месяцев доступа</div></div>
-    <div class="cf"><div class="cf-num">8</div><div class="cf-lbl">холстов в комплекте</div></div>
-    <div class="cf"><div class="cf-num">24/7</div><div class="cf-lbl">в любое время</div></div>
+  <!-- CTA к курсу -->
+  <div style="text-align:center;margin:0 auto 64px;">
+    <a href="#pricing" class="btn btn-fill" style="font-size:13px;padding:16px 40px;">Смотреть цены на курс ↑</a>
   </div>
 
   <!-- objections -->
