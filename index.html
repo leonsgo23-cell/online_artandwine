@@ -200,14 +200,18 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 /* ── OCCASIONS ── */
 .occasions { padding: 100px 32px; background: var(--cream); }
 .occasions-head { text-align: center; margin-bottom: 64px; }
-.occ-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
-.occ-card { border-radius: 28px; padding: 44px 36px 180px; display: flex; flex-direction: column; position: relative; overflow: hidden; min-height: 460px; background-size: cover; background-position: center; }
+.occ-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+.occ-card { border-radius: 28px; padding: 44px 36px 180px; display: flex; flex-direction: column; position: relative; overflow: hidden; min-height: 460px; background-size: cover; background-position: center; flex: 0 1 calc(33.333% - 16px); min-width: 280px; }
 .occ-card::before { content:''; position:absolute; inset:0; }
+.occ-solo   { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); background-position: center 70%; }
 .occ-date   { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); }
 .occ-girls  { background-image: url('https://static.tildacdn.net/tild3266-3235-4666-a338-316234313161/creative-women-art-e.png'); background-position: center top; }
+.occ-gift   { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); background-position: center 20%; }
 .occ-family { background-image: url('https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg'); background-position: center 30%; }
+.occ-solo::before   { background: linear-gradient(160deg, rgba(18,60,48,.84) 0%, rgba(28,95,72,.93) 100%); }
 .occ-date::before   { background: linear-gradient(160deg, rgba(70,8,25,.84) 0%, rgba(110,15,40,.93) 100%); }
 .occ-girls::before  { background: linear-gradient(160deg, rgba(28,14,68,.84) 0%, rgba(90,68,200,.9) 100%); }
+.occ-gift::before   { background: linear-gradient(160deg, rgba(75,38,8,.84) 0%, rgba(145,82,12,.93) 100%); }
 .occ-family::before { background: linear-gradient(160deg, rgba(12,36,50,.84) 0%, rgba(18,80,62,.93) 100%); }
 .occ-card-inner { position: relative; z-index: 1; display: flex; flex-direction: column; }
 .occ-tag { font-size: 10px; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 20px; }
@@ -346,7 +350,7 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .how-grid { grid-template-columns: 1fr; gap: 40px; }
   .how-grid .how-step::after { display: none; }
   .proof-grid { grid-template-columns: 1fr; }
-  .occ-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .occ-card { flex: 0 1 100%; max-width: 480px; }
   .pkg-grid { grid-template-columns: 1fr; max-width: 480px; }
   .trust-inner { grid-template-columns: 1fr; gap: 48px; }
   .course-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
@@ -367,18 +371,6 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .atm-icons { display: none !important; }
 }
 
-/* ── FOR WHOM ── */
-.forwhom { background: #fff; padding: 88px 32px; }
-.forwhom-head { text-align: center; max-width: 560px; margin: 0 auto 56px; }
-.forwhom-grid { max-width: 1160px; margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
-.fw-card { background: var(--cream); border-radius: 20px; padding: 32px 24px; text-align: center; transition: transform .2s ease, box-shadow .2s ease; }
-.fw-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(132,115,239,.12); }
-.fw-icon { width: 56px; height: 56px; background: var(--p-bg); border-radius: 16px; display: flex; align-items: center; justify-content: center; margin: 0 auto 18px; }
-.fw-icon svg { width: 24px; height: 24px; stroke: var(--p); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-.fw-title { font-size: 17px; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
-.fw-text  { font-size: 14px; color: var(--grey); line-height: 1.65; }
-@media (max-width: 960px)  { .forwhom-grid { grid-template-columns: repeat(2,1fr); } }
-@media (max-width: 560px)  { .forwhom-grid { grid-template-columns: 1fr; } }
 
 /* ── PKG scenario tag ── */
 .pkg-scenario { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 24px; }
@@ -436,8 +428,8 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
     <div style="position:absolute;inset:0;display:flex;align-items:center;padding:0 10vw;">
       <div style="max-width:520px;">
         <span style="display:block;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(168,145,255,.8);margin-bottom:20px;">Твой вечер</span>
-        <h2 style="font-size:52px;font-weight:900;line-height:1.06;letter-spacing:-2px;color:#fff;margin-bottom:20px;">Свечи.<br>Музыка.<br>Картина.</h2>
-        <p style="font-size:18px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:32px;max-width:400px;">Никаких правил, никаких ожиданий. Просто ты, свечи, музыка и холст. Через два часа — картина на стене и воспоминание, которое останется навсегда.</p>
+        <h2 style="font-size:52px;font-weight:900;line-height:1.06;letter-spacing:-2px;color:#fff;margin-bottom:20px;">Создайте вечер,<br>который хочется<br>повторить.</h2>
+        <p style="font-size:18px;color:rgba(255,255,255,.65);line-height:1.75;margin-bottom:32px;max-width:400px;">Просто открой набор, включи музыку и шаг за шагом напиши свою картину у себя дома.</p>
         <div style="display:flex;gap:10px;flex-wrap:wrap;">
           <a href="#gallery" class="btn btn-light">Выбрать картину</a>
           <a href="#pricing" style="display:inline-block;font-family:'Manrope',sans-serif;font-size:12px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;border-radius:100px;padding:14px 32px;border:2px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);transition:all .2s;" onmouseover="this.style.background='rgba(255,255,255,.08)'" onmouseout="this.style.background='transparent'">Смотреть цены</a>
@@ -466,59 +458,6 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
         <div style="font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:.5px;">Картина</div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- TRUST -->
-<section class="trust">
-  <div class="trust-inner w">
-    <div>
-      <div class="trust-aw-logo">Art & Wine</div>
-      <h2 class="trust-title">Создано художниками<br>арт-студии №1 в Европе</h2>
-      <p class="trust-text">Art & Wine — творческая студия в Риге, через мастер-классы которой прошли 20&nbsp;000+ участников. Мы видели, как горят глаза людей, как рисование становится источником радости и внутреннего роста. Именно этот опыт мы перенесли в наборы и онлайн-курс.</p>
-      <div class="trust-stats">
-        <div><div class="ts-num">9+</div><div class="ts-lbl">лет работы</div></div>
-        <div><div class="ts-num">20 000+</div><div class="ts-lbl">участников</div></div>
-        <div><div class="ts-num">5 000+</div><div class="ts-lbl">мероприятий</div></div>
-      </div>
-      <!-- Rating badges -->
-      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
-        <a href="https://www.google.com/search?q=Art+%26+Wine+Riga" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:10px 18px;text-decoration:none;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
-          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
-          <div>
-            <div style="font-size:13px;font-weight:800;color:var(--dark);">4.9 ★ Google</div>
-            <div style="font-size:11px;color:var(--light);">76 reviews</div>
-          </div>
-        </a>
-        <a href="https://www.tripadvisor.com/Attraction_Review-g274967-d27489982-Reviews-Art_Wine-Riga_Riga_Region.html" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:10px 18px;text-decoration:none;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="#00AF87"><circle cx="6.5" cy="14.5" r="4.5"/><circle cx="17.5" cy="14.5" r="4.5"/><path d="M12 5c-3.5 0-6.8.9-9.5 2.5L6 14.5c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5l3.5-7C19.8 5.9 16.5 5 12 5z" opacity=".6"/></svg>
-          <div>
-            <div style="font-size:13px;font-weight:800;color:var(--dark);">TripAdvisor</div>
-            <div style="font-size:11px;color:var(--light);">Travelers' Choice</div>
-          </div>
-        </a>
-      </div>
-      <a href="https://artandwine.club/ru" target="_blank" class="btn btn-dark">Про студию Art & Wine</a>
-    </div>
-    <div>
-    <div style="border-radius:20px;overflow:hidden;height:220px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.1);">
-      <img src="https://static.tildacdn.net/tild3664-3638-4238-a561-333062373362/Site_Main_29.png" alt="Art & Wine студия" style="width:100%;height:100%;object-fit:cover;object-position:center;" onerror="this.src='https://static.tildacdn.net/tild6137-3932-4364-b537-353564366332/Site_Main_30.png';">
-    </div>
-    <div class="trust-cards">
-      <div class="trust-card">
-        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
-        <div><div class="tc-title">Арт-студия №1 в Европе</div><div class="tc-sub">4.9★ Google · 76 отзывов · TripAdvisor</div></div>
-      </div>
-      <div class="trust-card">
-        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
-        <div><div class="tc-title">Профессиональные художники</div><div class="tc-sub">Те же, кто ведёт живые мастер-классы</div></div>
-      </div>
-      <div class="trust-card">
-        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-        <div><div class="tc-title">Материалы из студии</div><div class="tc-sub">Те же краски и кисти, что используем сами</div></div>
-      </div>
-    </div>
-  </div>
   </div>
 </section>
 
@@ -730,6 +669,59 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   </div>
 </section>
 
+<!-- TRUST -->
+<section class="trust">
+  <div class="trust-inner w">
+    <div>
+      <div class="trust-aw-logo">Art & Wine</div>
+      <h2 class="trust-title">Создано художниками<br>арт-студии №1 в Европе</h2>
+      <p class="trust-text">Art & Wine — творческая студия в Риге, через мастер-классы которой прошли 20&nbsp;000+ участников. Мы видели, как горят глаза людей, как рисование становится источником радости и внутреннего роста. Именно этот опыт мы перенесли в наборы и онлайн-курс.</p>
+      <div class="trust-stats">
+        <div><div class="ts-num">9+</div><div class="ts-lbl">лет работы</div></div>
+        <div><div class="ts-num">20 000+</div><div class="ts-lbl">участников</div></div>
+        <div><div class="ts-num">5 000+</div><div class="ts-lbl">мероприятий</div></div>
+      </div>
+      <!-- Rating badges -->
+      <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px;">
+        <a href="https://www.google.com/search?q=Art+%26+Wine+Riga" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:10px 18px;text-decoration:none;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--dark);">4.9 ★ Google</div>
+            <div style="font-size:11px;color:var(--light);">76 reviews</div>
+          </div>
+        </a>
+        <a href="https://www.tripadvisor.com/Attraction_Review-g274967-d27489982-Reviews-Art_Wine-Riga_Riga_Region.html" target="_blank" style="display:inline-flex;align-items:center;gap:10px;background:#fff;border:1.5px solid var(--border);border-radius:14px;padding:10px 18px;text-decoration:none;transition:box-shadow .2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(0,0,0,.1)'" onmouseout="this.style.boxShadow='none'">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="#00AF87"><circle cx="6.5" cy="14.5" r="4.5"/><circle cx="17.5" cy="14.5" r="4.5"/><path d="M12 5c-3.5 0-6.8.9-9.5 2.5L6 14.5c0-3.59 2.91-6.5 6.5-6.5s6.5 2.91 6.5 6.5l3.5-7C19.8 5.9 16.5 5 12 5z" opacity=".6"/></svg>
+          <div>
+            <div style="font-size:13px;font-weight:800;color:var(--dark);">TripAdvisor</div>
+            <div style="font-size:11px;color:var(--light);">Travelers' Choice</div>
+          </div>
+        </a>
+      </div>
+      <a href="https://artandwine.club/ru" target="_blank" class="btn btn-dark">Про студию Art & Wine</a>
+    </div>
+    <div>
+    <div style="border-radius:20px;overflow:hidden;height:220px;margin-bottom:20px;box-shadow:0 8px 32px rgba(0,0,0,.1);">
+      <img src="https://static.tildacdn.net/tild3664-3638-4238-a561-333062373362/Site_Main_29.png" alt="Art & Wine студия" style="width:100%;height:100%;object-fit:cover;object-position:center;" onerror="this.src='https://static.tildacdn.net/tild6137-3932-4364-b537-353564366332/Site_Main_30.png';">
+    </div>
+    <div class="trust-cards">
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg></div>
+        <div><div class="tc-title">Арт-студия №1 в Европе</div><div class="tc-sub">4.9★ Google · 76 отзывов · TripAdvisor</div></div>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg></div>
+        <div><div class="tc-title">Профессиональные художники</div><div class="tc-sub">Те же, кто ведёт живые мастер-классы</div></div>
+      </div>
+      <div class="trust-card">
+        <div class="tc-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <div><div class="tc-title">Материалы из студии</div><div class="tc-sub">Те же краски и кисти, что используем сами</div></div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
 <!-- HOW -->
 <section class="how" id="how">
   <div class="how-head w-sm">
@@ -828,41 +820,71 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   </div>
 </div>
 
-<!-- FOR WHOM -->
-<section class="forwhom">
-  <div class="forwhom-head">
-    <span class="overline">Это для вас</span>
-    <h2>Кому подойдёт?</h2>
-    <p class="lead">Рисование — не только для художников. Это для всех, у кого есть вечер и желание создать что-то своими руками.</p>
-  </div>
-  <div class="forwhom-grid">
-    <div class="fw-card">
-      <div class="fw-icon">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
-      </div>
-      <div class="fw-title">Для себя</div>
-      <p class="fw-text">Хочешь хобби и способ снять стресс. Не завтра — сегодня вечером, с бокалом вина и музыкой.</p>
+<!-- OCCASIONS -->
+<section class="occasions" id="occasions">
+  <div class="w">
+    <div class="occasions-head">
+      <span class="overline">Для любого повода</span>
+      <h2>Кому подойдёт<br>и для чего</h2>
+      <p class="lead" style="max-width:560px;margin-left:auto;margin-right:auto;">Набор открывают в одиночестве, на свидании, на девичнике и в семейный вечер. Или дарят — и тогда радуются оба.</p>
     </div>
-    <div class="fw-card">
-      <div class="fw-icon">
-        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+    <div class="occ-grid">
+
+      <!-- Для себя -->
+      <div class="occ-card occ-solo">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Для себя</div>
+          <div class="occ-emoji">🎨</div>
+          <h3>Вечер только<br>для себя</h3>
+          <p>Свечи, музыка, бокал вина — и ты рисуешь. Никаких задач, никакого стресса. Просто два часа, которые принадлежат тебе.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3965-3735-4436-b330-333238316331/7.png');"></div>
       </div>
-      <div class="fw-title">Для компании</div>
-      <p class="fw-text">Девичник, день рождения, корпоратив. Каждый уходит домой со своей картиной — и воспоминаниями.</p>
-    </div>
-    <div class="fw-card">
-      <div class="fw-icon">
-        <svg viewBox="0 0 24 24"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2z"/><path d="M12 22V7"/><path d="M12 7H7.5a2.5 2.5 0 010-5C11 2 12 7 12 7z"/><path d="M12 7h4.5a2.5 2.5 0 000-5C13 2 12 7 12 7z"/></svg>
+
+      <!-- Свидание -->
+      <div class="occ-card occ-date">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Свидание</div>
+          <div class="occ-emoji">🕯️</div>
+          <h3>Вечер<br>на двоих</h3>
+          <p>Вы вместе рисуете, смеётесь, открываете вино. Никаких экранов — только холст и разговор. Готовая картина остаётся как воспоминание.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3536-3062-4433-b630-323261616165/Site_Main_14.png');"></div>
       </div>
-      <div class="fw-title">В подарок</div>
-      <p class="fw-text">Уникальный подарок, который точно не повторится. Опыт и эмоции — вместо очередной вещи.</p>
-    </div>
-    <div class="fw-card">
-      <div class="fw-icon">
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" fill="rgba(132,115,239,.15)" stroke="var(--p)"/><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" fill="none" stroke="var(--p)"/></svg>
+
+      <!-- Девичник -->
+      <div class="occ-card occ-girls">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Девичник</div>
+          <div class="occ-emoji">🥂</div>
+          <h3>Вечер<br>с подругами</h3>
+          <p>3–4 подруги с наборами. Музыка, бокал вина, кисти. Каждая рисует свою картину — и забирает её домой.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3938-3263-4162-b439-646464393563/15.png');"></div>
       </div>
-      <div class="fw-title">Date Night</div>
-      <p class="fw-text">Вино, свечи, музыка, холст. Романтический вечер дома — с результатом, который останется на стене.</p>
+
+      <!-- В подарок -->
+      <div class="occ-card occ-gift">
+        <div class="occ-card-inner">
+          <div class="occ-tag">В подарок</div>
+          <div class="occ-emoji">🎁</div>
+          <h3>Необычный<br>подарок</h3>
+          <p>Уникальный подарок, который точно не повторится. Опыт и эмоции вместо очередной вещи — и картина на память.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3233-3533-4965-a638-313637636339/4.png');"></div>
+      </div>
+
+      <!-- Вечер с семьёй -->
+      <div class="occ-card occ-family">
+        <div class="occ-card-inner">
+          <div class="occ-tag">Вечер с семьёй</div>
+          <div class="occ-emoji">🏠</div>
+          <h3>Вместе дома</h3>
+          <p>Выключаете сериал, открываете набор — и рисуете вместе. Неважно, умеете ли держать кисть. Результат удивит всех.</p>
+        </div>
+        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3532-3965-4134-b537-356430346165/Site_Main_20.png');"></div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -904,53 +926,6 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
       <div class="proof-stars"><span></span><span></span><span></span><span></span><span></span></div>
       <p class="proof-quote">«Очень довольна — отличное развлечение! Быстрая доставка, всё аккуратно упаковано. Набор полный, ничего не нужно докупать. Буду заказывать ещё.»</p>
       <div class="proof-author"><div class="proof-avatar" style="background:linear-gradient(135deg,#f472b6,#e11d48);"></div><div><div class="proof-name">Ева А.</div><div class="proof-detail">Латвия</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- OCCASIONS -->
-<section class="occasions" id="occasions">
-  <div class="w">
-    <div class="occasions-head">
-      <span class="overline">Для любого повода</span>
-      <h2>Любой вечер<br>может быть особенным</h2>
-      <p class="lead" style="max-width:540px;margin-left:auto;margin-right:auto;">Набор открывают на свидании, на девичнике, в семейный вечер дома. Один и тот же результат — картина и хорошее настроение.</p>
-    </div>
-    <div class="occ-grid">
-
-      <!-- Свидание -->
-      <div class="occ-card occ-date">
-        <div class="occ-card-inner">
-          <div class="occ-tag">Свидание</div>
-          <div class="occ-emoji">🕯️</div>
-          <h3>Вечер на двоих</h3>
-          <p>Вы вместе рисуете, смеётесь, открываете вино. Никаких экранов — только холст и разговор. Готовая картина остаётся как воспоминание об этом вечере.</p>
-        </div>
-        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3536-3062-4433-b630-323261616165/Site_Main_14.png');"></div>
-      </div>
-
-      <!-- Девичник -->
-      <div class="occ-card occ-girls">
-        <div class="occ-card-inner">
-          <div class="occ-tag">Девичник</div>
-          <div class="occ-emoji">🥂</div>
-          <h3>Вечер с подругами</h3>
-          <p>3–4 подруги с наборами. Музыка, бокал вина, кисти. Каждая рисует свою картину — и забирает её домой как подарок вечера.</p>
-        </div>
-        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3938-3263-4162-b439-646464393563/15.png');"></div>
-      </div>
-
-      <!-- Вечер с семьёй -->
-      <div class="occ-card occ-family">
-        <div class="occ-card-inner">
-          <div class="occ-tag">Вечер с семьёй</div>
-          <div class="occ-emoji">🎨</div>
-          <h3>Вместе дома</h3>
-          <p>Выключаете сериал, открываете набор — и рисуете вместе. Неважно, умеете ли держать кисть. Результат удивит всех, включая вас.</p>
-        </div>
-        <div class="occ-painting" style="background-image:url('https://static.tildacdn.net/tild3233-3533-4965-a638-313637636339/4.png');"></div>
-      </div>
-
     </div>
   </div>
 </section>
