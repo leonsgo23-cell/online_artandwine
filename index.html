@@ -82,9 +82,10 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 .nav-btn:hover { background: var(--p-bg); }
 .nav-burger { display: none; background: none; border: none; cursor: pointer; padding: 4px; flex-direction: column; gap: 4px; }
 .nav-burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
-.mob-nav { display: none; flex-direction: column; background: var(--p-d); padding: 6px 32px 20px; }
+.mob-nav { display: none; flex-direction: column; background: var(--p-d); padding: 6px 24px 20px; }
 .mob-nav.open { display: flex; }
 .mob-nav a { color: rgba(255,255,255,.9); font-size: 14px; font-weight: 600; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+.mob-nav-cta { background: #fff !important; color: var(--p) !important; border-radius: 100px; text-align: center; padding: 13px 24px !important; margin-top: 10px; font-weight: 900 !important; border-bottom: none !important; letter-spacing: .5px; }
 
 /* ── HERO ── */
 .hero { background: var(--cream); padding: 88px 32px 80px; overflow: hidden; }
@@ -155,7 +156,6 @@ h2 { font-size: 46px; font-weight: 900; line-height: 1.1; letter-spacing: -1.2px
 .gallery-kids-line { flex: 1; height: 1px; background: var(--border); }
 .gallery-kids-label { font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: var(--p); white-space: nowrap; background: var(--p-bg); border-radius: 100px; padding: 6px 16px; }
 @media (max-width: 960px) { .gallery-grid, #gallery-extra { grid-template-columns: repeat(2,1fr) !important; } }
-@media (max-width: 560px) { .gallery-grid, #gallery-extra { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; } .gallery-thumb { height: 160px; } }
 
 /* ── HOW ── */
 .how { background: #fff; padding: 100px 32px; }
@@ -339,7 +339,7 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
 .ft-bottom { max-width: 1160px; margin: 0 auto; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.06); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 12px; color: rgba(255,255,255,.2); }
 .ft-bottom a { color: var(--p); }
 
-/* ── RESPONSIVE ── */
+/* ── RESPONSIVE 960px (tablet) ── */
 @media (max-width: 960px) {
   .nav-links { display: none; }
   .nav-burger { display: flex; }
@@ -349,26 +349,122 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
   .gallery-grid { grid-template-columns: repeat(2,1fr); }
   .how-grid { grid-template-columns: 1fr; gap: 40px; }
   .how-grid .how-step::after { display: none; }
-  .proof-grid { grid-template-columns: 1fr; }
+  .proof-grid { grid-template-columns: repeat(2,1fr); }
   .occ-card { flex: 0 1 100%; max-width: 480px; }
-  .pkg-grid { grid-template-columns: 1fr; max-width: 480px; }
-  .trust-inner { grid-template-columns: 1fr; gap: 48px; }
+  .pkg-grid { grid-template-columns: 1fr; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .trust-inner { grid-template-columns: 1fr; gap: 40px; }
   .course-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
   .course-feats { gap: 32px; }
-  .ft-inner { grid-template-columns: 1fr; gap: 36px; }
+  .ft-inner { grid-template-columns: 1fr; gap: 32px; }
   h2 { font-size: 34px; }
   .cta-h { font-size: 38px; }
-  .feat-bar-inner { gap: 24px; }
+  .feat-bar-inner { gap: 20px; }
   .trust-stats { gap: 20px; }
 }
+
+/* ── RESPONSIVE 560px (mobile) ── */
 @media (max-width: 560px) {
-  .hero h1 { font-size: 36px; }
-  .hero-cta { flex-direction: column; }
-  .kit-list { grid-template-columns: 1fr; }
-  .occ-card { padding: 36px 28px 140px; min-height: 380px; }
-  .occ-card h3 { font-size: 24px; }
-  .occ-painting { width: 100px; height: 100px; }
+  /* Контейнеры — меньше горизонтальный отступ */
+  .w, .w-sm, .w-xs { padding-left: 20px; padding-right: 20px; }
+  .nav-wrap { padding: 0 20px; }
+  .nav-btn { display: none; }  /* кнопка заказа — в моб-меню */
+
+  /* Типографика */
+  h2 { font-size: 26px; letter-spacing: -.3px; }
+  .lead { font-size: 15px; }
+  .overline { font-size: 10px; letter-spacing: 2px; }
+  .cta-h { font-size: 28px; letter-spacing: -.8px; }
+  .cta-text { font-size: 15px; }
+
+  /* Вертикальные отступы секций */
+  .hero     { padding: 52px 20px 44px; }
+  .gallery  { padding: 60px 20px; }
+  .how      { padding: 60px 20px; }
+  .proof    { padding: 60px 20px; }
+  .occasions{ padding: 60px 20px; }
+  .pricing  { padding: 60px 20px; }
+  .course   { padding: 60px 20px; }
+  .faq      { padding: 60px 20px; }
+  .trust    { padding: 60px 20px; }
+  .cta-final{ padding: 72px 20px; }
+  footer    { padding: 48px 20px 24px; }
+
+  /* HERO */
+  .hero h1 { font-size: 32px; letter-spacing: -.8px; }
+  .hero-text { font-size: 15px; margin-bottom: 24px; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .hero-cta .btn { text-align: center; }
+  .hero-proof { padding-top: 20px; gap: 10px; }
+  .hero-badge { font-size: 11px; padding: 6px 14px; }
+  .hero-proof-main { font-size: 12px; }
+
+  /* ATMOSPHERE — перебиваем inline-стили */
+  #atm h2 { font-size: 30px !important; letter-spacing: -1px !important; line-height: 1.1 !important; }
+  #atm p  { font-size: 15px !important; line-height: 1.65 !important; margin-bottom: 24px !important; }
   .atm-icons { display: none !important; }
+
+  /* GALLERY */
+  .gallery-grid, #gallery-extra { grid-template-columns: repeat(2,1fr) !important; gap: 12px !important; }
+  .gallery-thumb { height: 150px; }
+  .gallery-name  { font-size: 13px; }
+  .gallery-cta   { margin-top: 32px; }
+
+  /* HOW */
+  .how-num  { font-size: 52px; }
+  .how-head { margin-bottom: 44px; }
+  .how-title{ font-size: 17px; }
+
+  /* OCCASIONS */
+  .occ-card { max-width: 100%; padding: 32px 24px 140px; min-height: 380px; }
+  .occ-card h3 { font-size: 22px; }
+  .occ-painting { width: 90px; height: 90px; }
+  .occasions-head { margin-bottom: 36px; }
+  .occ-emoji { font-size: 36px; margin-bottom: 14px; }
+
+  /* PRICING */
+  .pkg-grid { max-width: 100%; }
+  .pkg { padding: 28px 22px; }
+  .pkg-amount { font-size: 42px; }
+  .pkg-name   { font-size: 20px; }
+
+  /* FEAT BAR */
+  .feat-bar { padding: 16px 20px; }
+  .feat-bar-inner { gap: 10px; justify-content: flex-start; }
+  .feat-item { font-size: 12px; }
+  .feat-icon { width: 24px; height: 24px; }
+
+  /* TESTIMONIALS */
+  .proof-grid { grid-template-columns: 1fr; }
+  .proof-card { padding: 22px; }
+  .proof-quote { font-size: 14px; }
+
+  /* TRUST */
+  .trust-title { font-size: 26px !important; }
+  .ts-num  { font-size: 28px; }
+  .trust-stats { gap: 14px; }
+  .trust-inner { gap: 28px; }
+  .trust-text  { font-size: 14px; }
+
+  /* COURSE */
+  .cc-price { font-size: 36px; }
+  .course-feats { gap: 20px; }
+  .cf-num { font-size: 28px; }
+  .course-head { margin-bottom: 44px; }
+
+  /* FAQ */
+  .faq-q { font-size: 14px; padding: 16px 18px; }
+  .faq-a { font-size: 14px; padding: 0 18px 16px; }
+  .faq-head { margin-bottom: 36px; }
+
+  /* CTA */
+  .cta-btns { flex-direction: column; align-items: center; }
+
+  /* FOOTER */
+  .ft-inner { gap: 20px; }
+  .ft-bottom { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+
+  /* KIT */
+  .kit-list { grid-template-columns: 1fr; }
 }
 
 
@@ -411,11 +507,12 @@ footer { background: var(--rich2); padding: 64px 32px 28px; }
     <a href="#pricing">Цены</a>
     <a href="#course">Онлайн-курс</a>
     <a href="#faq">FAQ</a>
+    <a href="#pricing" class="mob-nav-cta">Заказать набор</a>
   </div>
 </nav>
 
 <!-- ATMOSPHERE -->
-<section style="background:var(--rich);padding:0;overflow:hidden;position:relative;">
+<section id="atm" style="background:var(--rich);padding:0;overflow:hidden;position:relative;">
   <!-- full-width studio photo -->
   <div style="position:relative;height:520px;overflow:hidden;">
     <img src="https://static.tildacdn.net/tild3862-6334-4365-a466-623134336162/art_and_wine.jpg"
